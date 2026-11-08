@@ -1,0 +1,38 @@
+ALGORITHM: MATCHSTICK MASTER PUZZLE GAME
+
+Input:
+    Player name.
+    Corrected equation entered by the player.
+
+Output:
+    Answer validation, score, level progress and final scoreboard.
+
+Steps:
+1. Start the application.
+2. Load the saved top-five scoreboard from scores.json.
+3. Initialize level = 0, score = 0 and timer = 60 seconds.
+4. Display the game interface and current puzzle.
+5. Start the countdown timer.
+6. Read the player's answer.
+7. Remove spaces and normalize the entered equation.
+8. Compare the entered answer with the expected answer.
+9. If the answer is correct:
+       a. Stop the timer.
+       b. Calculate points based on remaining time.
+       c. Apply the hint penalty if a hint was used.
+       d. Add points to the total score.
+       e. Enable the Next Level button.
+10. Otherwise:
+       a. Deduct 5 points, keeping the score at or above zero.
+       b. Display an incorrect-answer message.
+       c. Continue until the answer is correct or time expires.
+11. If time expires, finish the game.
+12. If all levels are completed, finish the game.
+13. Save the player's score in scores.json.
+14. Sort scores and retain the top five entries.
+15. Display the final score and leaderboard.
+
+Complexity:
+    Answer validation: O(L) per attempt, where L is input length.
+    Puzzle storage: O(P), where P is the number of puzzles.
+    Score sorting: O(S log S), where S is the number of stored scores.
